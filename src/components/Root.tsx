@@ -1,11 +1,12 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import { Outlet } from "react-router-dom";
 
 export default function Root() {
     return (
-        <>
-            <h1>I'm Root</h1>
+        <Box>
+            I'm Root
             <Outlet />
-        </>
+        </Box>
     )
 }
