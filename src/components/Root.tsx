@@ -3,22 +3,12 @@ import {
   Button,
   HStack,
   IconButton,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  VStack,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { FaAirbnb, FaLock, FaMoon, FaUserNinja } from "react-icons/fa";
-import SocialLogin from "./SocialLogin.tsx";
+import { FaAirbnb, FaMoon } from "react-icons/fa";
+import LoginModal from "./LoginModal.tsx";
 
 export default function Root() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -42,45 +32,7 @@ export default function Root() {
           <Button onClick={onOpen}>Log in</Button>
           <Button colorScheme="red">Sign up</Button>
         </HStack>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Log in</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <VStack>
-                <InputGroup>
-                  <InputLeftElement
-                    children={
-                      <Box color="gray.500">
-                        <FaUserNinja />
-                      </Box>
-                    }
-                  />
-                  <Input variant={"filled"} placeholder={"Username"} />
-                </InputGroup>
-                <InputGroup>
-                  <InputLeftElement
-                    children={
-                      <Box color="gray.500">
-                        <FaLock />
-                      </Box>
-                    }
-                  />
-                  <Input
-                    type={"password"}
-                    variant={"filled"}
-                    placeholder={"Password"}
-                  />
-                </InputGroup>
-                <Button mt={4} colorScheme={"red"} w="100%">
-                  Log in
-                </Button>
-                <SocialLogin />
-              </VStack>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+        <LoginModal isOpen={isOpen} onClose={onClose} />
       </HStack>
       <Outlet />
     </Box>
