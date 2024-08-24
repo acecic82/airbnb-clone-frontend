@@ -8,9 +8,19 @@ import {
 import { FaAirbnb, FaMoon } from "react-icons/fa";
 import LoginModal from "./LoginModal.tsx";
 import React from "react";
+import SignUpModal from "./SignUpModal.tsx";
 
 export default function Header() {
-  const { isOpen, onClose, onOpen } = useDisclosure();
+  const {
+    isOpen: isLoginOpen,
+    onClose: onLoginClose,
+    onOpen: onLoginOpen,
+  } = useDisclosure();
+  const {
+    isOpen: isSignUpOpen,
+    onClose: onSignUpClose,
+    onOpen: onSignUpOpen,
+  } = useDisclosure();
 
   return (
     <HStack
@@ -28,10 +38,13 @@ export default function Header() {
           variant={"ghost"}
           icon={<FaMoon />}
         />
-        <Button onClick={onOpen}>Log in</Button>
-        <Button colorScheme="red">Sign up</Button>
+        <Button onClick={onLoginOpen}>Log in</Button>
+        <Button colorScheme="red" onClick={onSignUpOpen}>
+          Sign up
+        </Button>
       </HStack>
-      <LoginModal isOpen={isOpen} onClose={onClose} />
+      <LoginModal isOpen={isLoginOpen} onClose={onLoginClose} />
+      <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose} />
     </HStack>
   );
 }
