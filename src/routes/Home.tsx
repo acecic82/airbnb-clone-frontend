@@ -20,23 +20,23 @@ export default function Home() {
       }}
     >
       <Box>
-        <Skeleton rounded="2xl" height={280} mb={3} />
+        <Skeleton rounded="2xl" height={280} mb={7} />
         <SkeletonText w="50%" noOfLines={3} />
       </Box>
       <Box>
-        <Skeleton rounded="2xl" height={280} mb={3} />
+        <Skeleton rounded="2xl" height={280} mb={7} />
         <SkeletonText w="50%" noOfLines={3} />
       </Box>
       <Box>
-        <Skeleton rounded="2xl" height={280} mb={3} />
+        <Skeleton rounded="2xl" height={280} mb={7} />
         <SkeletonText w="50%" noOfLines={3} />
       </Box>
       <Box>
-        <Skeleton rounded="2xl" height={280} mb={3} />
+        <Skeleton rounded="2xl" height={280} mb={7} />
         <SkeletonText w="50%" noOfLines={3} />
       </Box>
       <Box>
-        <Skeleton rounded="2xl" height={280} mb={3} />
+        <Skeleton rounded="2xl" height={280} mb={7} />
         <SkeletonText w="50%" noOfLines={3} />
       </Box>
     </Grid>
